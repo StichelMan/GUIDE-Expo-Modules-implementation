@@ -45,7 +45,7 @@ Android:
 ```
 
 Prerequisites: 
-1) Create a normal, standalone, react native project (does not have to be Expo Managed (yet) but it's the same approach):
+1) Create a normal, standalone, react native project (does not have to be Expo Managed (yet) but it's the same approach):</br>
 https://docs.expo.dev/get-started/create-a-project/ (`npx create-expo-app`)</br>
 or</br>
 https://reactnative.dev/docs/environment-setup (`npx react-native@latest init`)
@@ -156,6 +156,7 @@ override fun invokeDefaultOnBackPressed() {
 ```
 
 3) Install Expo in the React Native project by running `npm install expo`
+
 4) Run `npx expo install --fix` to ensure proper installation.
 
 5) Create a new file in the same directory as 'MainActivity.kt', named 'MainApplication.kt', and paste the required code which I will upload an example of within this repository (`MainApplication.kt`)
@@ -173,9 +174,9 @@ override fun invokeDefaultOnBackPressed() {
     "all": "npm run bundle-android && npm run android && npm run bundle-ios && npm run ios"
   }
 ```
-Caution:
-Rename the bundle name 'index.android.bundle' to whatever you want it to be named if you are going to make use of multiple bundles
-Rename the entry file 'index.tsx' to whatever your React Native entry file is called and also pay attention to the file extension; '.tsx' for TypeScript and '.js' for JavaScript.
+Caution:</br>
+Rename the bundle name 'index.android.bundle' to whatever you want it to be named if you are going to make use of multiple bundles</br>
+Rename the entry file 'index.tsx' to whatever your React Native entry file is called and also pay attention to the file extension; '.tsx' for TypeScript and '.js' for JavaScript.</br>
 
 7) Ensure the following properties are enabled in 'gradle.properties' (project properties):
 ```bash
@@ -259,4 +260,4 @@ apply plugin: 'kotlin-android'
 
 These steps were necessary for my OLD, Java Android, project in order to make integrating of Expo Modules into your existing Android project possible; making the development process better since there will be no need for native configuration as long as Expo-compatible packages are used in React Native. Keep in mind that the new entry files for Expo modules integration will be in Kotlin. However, for the native Java project, there's no need to convert syntax since Java and Kotlin can coexist in the same project, albeit not in the same files.
 
-NOTE: I have very minimal experience working with Java for mobile android apps and thus I could be wrong about specific "claims" made in my above findings, but I can proudly say that I am now able to write react native code, keep practicing the expo managed workflow and never have to touch any native code (apart from this one-time configuration and the places I want my React Native bundles to be rendered), to make the react native components appear in development and render in production builds WITHIN the original, Java-written, native application.
+DISCLAIMER: I have very minimal experience working with Java for mobile android apps and thus I could be wrong about specific "claims" made in my above findings, but I can proudly say that I am now able to write react native code, keep practicing the expo managed workflow and never have to touch any native code (apart from this one-time configuration and the places I want my React Native bundles to be rendered), to make the react native components appear in development and render in production builds WITHIN the original, Java-written, native application.
