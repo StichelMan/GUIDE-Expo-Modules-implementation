@@ -15,11 +15,11 @@ Note that there is still a difference between the Expo's manual installation and
 </br>
 If you're interested, you can check out the official documentation here: https://docs.expo.dev/bare/installing-expo-modules/</br>
 
-**Or follow my take on the Manual Installation:**</br>
+## **Or follow my take on the Manual Installation:**</br>
 Relevant:</br>
 Keep in mind that the new entry files (explained in the following steps) for Expo modules integration will be in Kotlin. However, for the native Java project, there's no need to convert syntax since Java and Kotlin can coexist in the same project, albeit not in the same files.
 
-State of the my system and the project I have used, applied and written this guide for:
+### State of the my system and the project I have used, applied and written this guide for:
 ```bash
 System:
   OS: Windows 11 10.0.22631
@@ -46,7 +46,7 @@ Android:
   newArchEnabled: false
 ```
 
-Prerequisites: 
+### Prerequisites: 
 1) Create a normal, standalone, react native project (does not have to be Expo Managed (yet) but it's the same approach):</br>
 https://docs.expo.dev/get-started/create-a-project/ (`npx create-expo-app`)</br>
 or</br>
@@ -176,7 +176,7 @@ override fun invokeDefaultOnBackPressed() {
     "all": "npm run bundle-android && npm run android && npm run bundle-ios && npm run ios"
   }
 ```
-Caution:</br>
+### Caution:</br>
 Rename the bundle name 'index.android.bundle' to whatever you want it to be named if you are going to make use of multiple bundles</br>
 Rename the entry file 'index.tsx' to whatever your React Native entry file is called and also pay attention to the file extension; '.tsx' for TypeScript and '.js' for JavaScript.</br>
 
@@ -233,7 +233,7 @@ allprojects {
     }
 }
 ```
-Note: at the bottom of this file should also be a task declaration responsable for correctly cleaning builds:
+#### Note: at the bottom of this file should also be a task declaration responsable for correctly cleaning builds:
 ```bash
 tasks.register('clean', Delete) {
     delete rootProject.buildDir
@@ -247,7 +247,7 @@ apply plugin: "com.facebook.react"
 apply plugin: 'kotlin-android'
 //rest of the code
 ```
-Note: at the bottom of the (app-level) 'build.gradle' file should already be the following code, configured from the React Native 'Integration with Existing Apps' guide:
+#### Note: at the bottom of the (app-level) 'build.gradle' file should already be the following code, configured from the React Native 'Integration with Existing Apps' guide:
 ```bash
 //rest of the code
 apply plugin: 'com.android.application'
@@ -262,4 +262,5 @@ apply plugin: 'kotlin-android'
 
 These steps were necessary for my OLD, Java Android, project in order to make integrating of Expo Modules into your existing Android project possible; making the development process better since there will be no need for native configuration as long as Expo-compatible packages are used in React Native.
 
-DISCLAIMER:</br> I have very minimal experience working with Java for mobile android apps and thus I could be wrong about specific "claims" made in my above findings, but I can proudly say that I am now able to write React Native code, keep practicing the expo managed workflow and never have to touch any native code (apart from this one-time configuration and the places I want my React Native bundles to be rendered), to make the react native components appear in development and render in production builds WITHIN the original, Java-written, native application.
+### DISCLAIMER:</br> 
+I have very minimal experience working with Java for mobile android apps and thus I could be wrong about specific "claims" made in my above findings, but I can proudly say that I am now able to write React Native code, keep practicing the expo managed workflow and never have to touch any native code (apart from this one-time configuration and the places I want my React Native bundles to be rendered), to make the react native components appear in development and render in production builds WITHIN the original, Java-written, native application.
