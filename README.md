@@ -13,7 +13,7 @@ Note that there is still a difference between the Expo's manual installation and
 **Advantage:** communcation between all React Native code is guarenteed (since there's only one bundle being rendered)</br>
 **Disadvantage:** it's less relevant for a scenario where an older, completely native, android project is required to remain as is and expand that application by, from then on, writing new React Native screens/components and rendering them as bundles in those existing native screens wherever its necessary</br>
 </br>
-If you're interested, you can check out the official documentation here: Expo Manual Installation Guide.</br>
+If you're interested, you can check out the official documentation here: https://docs.expo.dev/bare/installing-expo-modules/</br>
 
 Or follow my take on the Manual Installation:</br>
 Relevant:</br>
