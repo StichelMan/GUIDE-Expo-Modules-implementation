@@ -240,7 +240,7 @@ tasks.register('clean', Delete) {
 }
 ```
 
-10) When the original native project is written in Java, make sure to apply plugin 'kotlin-android' at the top of the app-level build.gradle where at this points; at least two other plugins should already be present:
+10) When the original native project is written in Java, make sure to apply plugin 'kotlin-android' at the top of the app-level build.gradle where at this point; at least two other plugins should already be present:
 ```bash
 apply plugin: 'com.android.application'
 apply plugin: "com.facebook.react"
