@@ -4,10 +4,10 @@ A detailed guide for implementing Expo-modules enabling autolinking in an existi
 I've put together a guide on integrating React Native Expo into existing Android projects, based on my own experience. While Expo's official documentation covers this topic, I found it somewhat limited and unclear, especially when troubleshooting issues and starting from a relatively old native project.
 </br>
 Initially, I attempted the automatic installation method using 'npx install-expo-modules@latest', but encountered repeated failures. Then, I turned to the manual installation approach, which provided some insights but didn't fully enable Expo's autolinking feature. Through trial and error, I pieced together the necessary steps, essentially following Expo's manual installation guide but a slightly different approach and outcome, especially useful for those unfamiliar with the Android project structure like myself.
-Note that there is still a difference between the Expo's manual installation and my manual installation being the following:</br>
+Note that there is still a difference between the Expo's manual installation and my manual installation being the following:</br></br>
 **By following my approach the rendering of React Native bundles will only work at the places where a reactRootView is places and configured to render the correct bundle exported from React Native (AppRegistry).**</br>
 **Advantage:** having more control over where React Native bundles are rendered relative to (within) the original native app which is useful to keep using the native (existing) navigation etc.</br>
-Disadvantage: I suppose it's still less "automatic" and might be more difficult to make two seperate React Native bundles communicate</br>
+**Disadvantage:** I suppose it's still less "automatic" and might be more difficult to make two seperate React Native bundles communicate</br>
 </br>
 **Expo's manual installation approach, I believe, aims to make 'MainActivity' and 'MainApplication' to be the main and only entry file's where your React Native bundle is rendered in, thus allowing you to have ONE single NATIVE screen in which the React Native bundle is rendered and navigation then be handled, automatically, from React Native Expo-compatible navigation methods.**</br>
 **Advantage:** communcation between all React Native code is guarenteed (since there's only one bundle being rendered)</br>
