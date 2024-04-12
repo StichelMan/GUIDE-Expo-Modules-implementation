@@ -15,7 +15,7 @@ Disadvantage: it's less relevant for a scenario where an older, completely nativ
 </br>
 If you're interested, you can check out the official documentation here: Expo Manual Installation Guide.</br>
 
-Or follow my take on the Manual Installation:
+Or follow my take on the Manual Installation:</br>
 Relevant:</br>
 Keep in mind that the new entry files for Expo modules integration will be in Kotlin. However, for the native Java project, there's no need to convert syntax since Java and Kotlin can coexist in the same project, albeit not in the same files.
 
