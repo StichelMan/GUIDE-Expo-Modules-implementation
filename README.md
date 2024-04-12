@@ -15,9 +15,9 @@ Note that there is still a difference between the Expo's manual installation and
 </br>
 If you're interested, you can check out the official documentation here: https://docs.expo.dev/bare/installing-expo-modules/</br>
 
-Or follow my take on the Manual Installation:</br>
+**Or follow my take on the Manual Installation:**</br>
 Relevant:</br>
-Keep in mind that the new entry files for Expo modules integration will be in Kotlin. However, for the native Java project, there's no need to convert syntax since Java and Kotlin can coexist in the same project, albeit not in the same files.
+Keep in mind that the new entry files (explained in the following steps) for Expo modules integration will be in Kotlin. However, for the native Java project, there's no need to convert syntax since Java and Kotlin can coexist in the same project, albeit not in the same files.
 
 State of the my system and the project I have used, applied and written this guide for:
 ```bash
