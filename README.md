@@ -57,7 +57,8 @@ Preconditioning Expo Conversion in React Native with Original Native Project:
 
 2) Begin by creating/modifying 'MainActivity.kt'; The following bits of code are the essential, minimum, required 'MainActivity' modifications:
 Essential imports:
-```import android.content.pm.PackageManager
+```
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.KeyEvent
 import android.widget.LinearLayout
@@ -73,19 +74,25 @@ import com.facebook.react.common.LifecycleState
 import com.facebook.soloader.SoLoader
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler
 import com.facebook.react.modules.core.PermissionAwareActivity
-import com.facebook.react.modules.core.PermissionListener```
+import com.facebook.react.modules.core.PermissionListener
+```
 
 The MainActivity class must extend AppCompatActivity(), DefaultHardwareBackBtnHandler and PermissionAwareActivity:
-```class MainActivity : AppCompatActivity(), DefaultHardwareBackBtnHandler, PermissionAwareActivity {
+```
+class MainActivity : AppCompatActivity(), DefaultHardwareBackBtnHandler, PermissionAwareActivity {
 	//MainActivity content
-}```
+}
+```
 
 Essential properties of 'MainActivity' class:
-```private lateinit var reactRootView: ReactRootView
-private lateinit var reactInstanceManager: ReactInstanceManager```
+```
+private lateinit var reactRootView: ReactRootView
+private lateinit var reactInstanceManager: ReactInstanceManager
+```
 
 The actual React Instance (bundle) declaration and render (onCreate method):
-```override fun onCreate(savedInstanceState: Bundle?) {
+```
+override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         SoLoader.init(this, false)
         reactRootView = ReactRootView(this)
@@ -105,10 +112,12 @@ The actual React Instance (bundle) declaration and render (onCreate method):
 		val layout = createLinearLayout()
 		layout.addView(reactRootView)
 		setContentView(layout)
-    }```
+    }
+	```
 	
 Essential navigation handler (override) methods:
-```override fun invokeDefaultOnBackPressed() {
+```
+override fun invokeDefaultOnBackPressed() {
         super.onBackPressed()
     }
 
@@ -140,7 +149,8 @@ Essential navigation handler (override) methods:
             return true
         }
         return super.onKeyUp(keyCode, event)
-    }```
+    }
+	```
 
 3) Install Expo in the React Native project by running `npm install expo`
 4) Run `npx expo install --fix` to ensure proper installation.
@@ -149,7 +159,8 @@ Essential navigation handler (override) methods:
 https://discord.com/channels/695411232856997968/1219265998277054474/1228315968581668884
 
 6) Add the following scripts in 'package.json' for a faster workflow:
-```"scripts": {
+```
+"scripts": {
     "dev": "yarn react-native start",
     "android": "yarn react-native run-android",
     "ios": "yarn react-native run-ios",
@@ -165,7 +176,8 @@ Rename the bundle name 'index.android.bundle' to whatever you want it to be name
 Rename the entry file 'index.tsx' to whatever your React Native entry file is called and also pay attention to the file extension; '.tsx' for TypeScript and '.js' for JavaScript.
 
 7) Ensure the following properties are enabled in 'gradle.properties' (project properties):
-```org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8
+```
+org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8
 android.useAndroidX=true
 kotlin.code.style=official
 android.nonTransitiveRClass=true
@@ -177,15 +189,18 @@ expo.useLegacyPackaging=false
 ```
 
 8) Confirm that necessary dependencies are present in 'settings.gradle' (project settings):
-```include ':app'
+```
+include ':app'
 includeBuild('../node_modules/@react-native/gradle-plugin')
 apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle");
 applyNativeModulesSettingsGradle(settings)
 apply from: new File(["node", "--print", "require.resolve('expo/package.json')"].execute(null, rootDir).text.trim(), "../scripts/autolinking.gradle")
-useExpoModules()```
+useExpoModules()
+```
 
 9) Double check the top-level 'build.gradle' file; it should already contain the following 'buildscript', 'plugins' and 'allprojects' blocks:
-```buildscript {
+```
+buildscript {
     repositories {
         jcenter()
         mavenCentral()
@@ -211,27 +226,33 @@ allprojects {
         // Add repositories from Kotlin project
         maven { url "https://dl.bintray.com/journeyapps/maven" }
     }
-}```
+}
+```
 Note: at the bottom of this file should also be a task declaration responsable for correctly cleaning builds:
 ```tasks.register('clean', Delete) {
     delete rootProject.buildDir
-}```
+}
+```
 
 10) When the original native project is written in Java, make sure to apply plugin 'kotlin-android' at the top of the app-level build.gradle where at this points; at least two other plugins should already be present:
-```apply plugin: 'com.android.application'
+```
+apply plugin: 'com.android.application'
 apply plugin: "com.facebook.react"
 apply plugin: 'kotlin-android'
 //rest of the code
 ```
 Note: at the bottom of the (app-level) 'build.gradle' file should already be the following code, configured from the React Native 'Integration with Existing Apps' guide:
-```//rest of the code
+```
+//rest of the code
 apply plugin: 'com.android.application'
 apply plugin: "com.facebook.react"
 apply plugin: 'kotlin-android'
 ```
 
 11) Add the following activity declaration in 'AndroidManifest.xml':
-```<activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />```
+```
+<activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+```
 
 These steps were necessary for my OLD, Java Android, project in order to make integrating of Expo Modules into your existing Android project possible; making the development process better since there will be no need for native configuration as long as Expo-compatible packages are used in React Native. Keep in mind that the new entry files for Expo modules integration will be in Kotlin. However, for the native Java project, there's no need to convert syntax since Java and Kotlin can coexist in the same project, albeit not in the same files.
 
