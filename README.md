@@ -18,6 +18,7 @@ If you're interested, you can check out the official documentation here: Expo Ma
 Or follow my take on the Manual Installation:
 
 State of the my system and the project I have written, applied and used this guide for:
+```bash
 System:
   OS: Windows 11 10.0.22631
   CPU: (8) x64 Intel(R) Core(TM) i5-8265U CPU @ 1.60GHz
@@ -41,6 +42,7 @@ npmPackages:
 Android:
   hermesEnabled: true
   newArchEnabled: false
+```
 
 Prerequisites: 
 1) Create a normal, standalone, react native project (does not have to be Expo Managed (yet) but it's the same approach):
