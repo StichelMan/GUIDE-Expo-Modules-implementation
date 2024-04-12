@@ -151,14 +151,12 @@ override fun invokeDefaultOnBackPressed() {
         }
         return super.onKeyUp(keyCode, event)
     }
-	
 ```
 
 3) Install Expo in the React Native project by running `npm install expo`
 4) Run `npx expo install --fix` to ensure proper installation.
 
-5) Create a new file in the same directory as 'MainActivity.kt', named 'MainApplication.kt', and paste the required code which I will upload an example of as a file within this chat
-https://discord.com/channels/695411232856997968/1219265998277054474/1228315968581668884
+5) Create a new file in the same directory as 'MainActivity.kt', named 'MainApplication.kt', and paste the required code which I will upload an example of within this repository (`MainApplication.kt`)
 
 6) Add the following scripts in 'package.json' for a faster workflow:
 ```bash
