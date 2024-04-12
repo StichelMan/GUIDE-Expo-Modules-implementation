@@ -1,4 +1,4 @@
-# Expo-Modules implementation enabling autolinking while maintaining and EXISTING Native Android Java/Kotlin project
+# Expo-Modules implementation enabling autolinking while maintaining an EXISTING Native Android Java/Kotlin project
 A detailed guide for implementing Expo-modules enabling autolinking in an existing Native Andoid Java/Kotlin project
 
 I've put together a guide on integrating React Native Expo into existing Android projects, based on my own experience. While Expo's official documentation covers this topic, I found it somewhat limited and unclear, especially when troubleshooting issues and starting from a relatively old native project.
