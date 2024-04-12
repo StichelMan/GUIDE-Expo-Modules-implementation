@@ -1,4 +1,4 @@
-# Expo-Modules_implementation
+# Expo-Modules implementation enabling autolinking -> better developer experience while maintaining and EXISTING Native Android Java/Kotlin project
 A detailed guide for implementing Expo-modules enabling autolinking in an EXISTING Native Andoid Java/Kotlin project
 
 I've put together a guide on integrating React Native Expo into existing Android projects, based on my own experience. While Expo's official documentation covers this topic, I found it somewhat limited and unclear, especially when troubleshooting issues.
@@ -16,6 +16,8 @@ Disadvantage: it's less relevant for a scenario where an older, completely nativ
 If you're interested, you can check out the official documentation here: Expo Manual Installation Guide.
 
 Or follow my take on the Manual Installation:
+Relevant:</br>
+Keep in mind that the new entry files for Expo modules integration will be in Kotlin. However, for the native Java project, there's no need to convert syntax since Java and Kotlin can coexist in the same project, albeit not in the same files.
 
 State of the my system and the project I have used, applied and written this guide for:
 ```bash
@@ -258,6 +260,6 @@ apply plugin: 'kotlin-android'
 <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
 ```
 
-These steps were necessary for my OLD, Java Android, project in order to make integrating of Expo Modules into your existing Android project possible; making the development process better since there will be no need for native configuration as long as Expo-compatible packages are used in React Native. Keep in mind that the new entry files for Expo modules integration will be in Kotlin. However, for the native Java project, there's no need to convert syntax since Java and Kotlin can coexist in the same project, albeit not in the same files.
+These steps were necessary for my OLD, Java Android, project in order to make integrating of Expo Modules into your existing Android project possible; making the development process better since there will be no need for native configuration as long as Expo-compatible packages are used in React Native.
 
 DISCLAIMER:</br> I have very minimal experience working with Java for mobile android apps and thus I could be wrong about specific "claims" made in my above findings, but I can proudly say that I am now able to write React Native code, keep practicing the expo managed workflow and never have to touch any native code (apart from this one-time configuration and the places I want my React Native bundles to be rendered), to make the react native components appear in development and render in production builds WITHIN the original, Java-written, native application.
