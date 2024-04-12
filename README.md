@@ -17,7 +17,7 @@ If you're interested, you can check out the official documentation here: Expo Ma
 
 Or follow my take on the Manual Installation:
 
-State of the my system and the project I have written, applied and used this guide for:
+State of the my system and the project I have used, applied and written this guide for:
 ```bash
 System:
   OS: Windows 11 10.0.22631
@@ -46,8 +46,8 @@ Android:
 
 Prerequisites: 
 1) Create a normal, standalone, react native project (does not have to be Expo Managed (yet) but it's the same approach):
-https://docs.expo.dev/get-started/create-a-project/ (`npx create-expo-app`)
-or
+https://docs.expo.dev/get-started/create-a-project/ (`npx create-expo-app`)</br>
+or</br>
 https://reactnative.dev/docs/environment-setup (`npx react-native@latest init`)
 
 2) Create a directory 'android' in the root of the React Native project and copy the complete Native Android project into the 'android' directory.
