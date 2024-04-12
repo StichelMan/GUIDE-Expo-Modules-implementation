@@ -57,7 +57,7 @@ Preconditioning Expo Conversion in React Native with Original Native Project:
 
 2) Begin by creating/modifying 'MainActivity.kt'; The following bits of code are the essential, minimum, required 'MainActivity' modifications:
 Essential imports:
-`
+```bash
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.KeyEvent
@@ -75,23 +75,23 @@ import com.facebook.soloader.SoLoader
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler
 import com.facebook.react.modules.core.PermissionAwareActivity
 import com.facebook.react.modules.core.PermissionListener
-`
+```
 
 The MainActivity class must extend AppCompatActivity(), DefaultHardwareBackBtnHandler and PermissionAwareActivity:
-`
+```bash
 class MainActivity : AppCompatActivity(), DefaultHardwareBackBtnHandler, PermissionAwareActivity {
 	//MainActivity content
 }
-`
+```
 
 Essential properties of 'MainActivity' class:
-`
+```bash
 private lateinit var reactRootView: ReactRootView
 private lateinit var reactInstanceManager: ReactInstanceManager
-`
+```
 
 The actual React Instance (bundle) declaration and render (onCreate method):
-`
+```bash
 override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         SoLoader.init(this, false)
@@ -113,10 +113,11 @@ override fun onCreate(savedInstanceState: Bundle?) {
 		layout.addView(reactRootView)
 		setContentView(layout)
     }
-	`
+	
+```
 	
 Essential navigation handler (override) methods:
-`
+```bash
 override fun invokeDefaultOnBackPressed() {
         super.onBackPressed()
     }
@@ -151,7 +152,7 @@ override fun invokeDefaultOnBackPressed() {
         return super.onKeyUp(keyCode, event)
     }
 	
-`
+```
 
 3) Install Expo in the React Native project by running `npm install expo`
 4) Run `npx expo install --fix` to ensure proper installation.
@@ -160,7 +161,7 @@ override fun invokeDefaultOnBackPressed() {
 https://discord.com/channels/695411232856997968/1219265998277054474/1228315968581668884
 
 6) Add the following scripts in 'package.json' for a faster workflow:
-`
+```bash
 "scripts": {
     "dev": "yarn react-native start",
     "android": "yarn react-native run-android",
@@ -171,13 +172,13 @@ https://discord.com/channels/695411232856997968/1219265998277054474/122831596858
     "build": "npm run bundle-android && npm run bundle-ios",
     "all": "npm run bundle-android && npm run android && npm run bundle-ios && npm run ios"
   }
-`
+```
 Caution:
 Rename the bundle name 'index.android.bundle' to whatever you want it to be named if you are going to make use of multiple bundles
 Rename the entry file 'index.tsx' to whatever your React Native entry file is called and also pay attention to the file extension; '.tsx' for TypeScript and '.js' for JavaScript.
 
 7) Ensure the following properties are enabled in 'gradle.properties' (project properties):
-`
+```bash
 org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8
 android.useAndroidX=true
 kotlin.code.style=official
@@ -187,20 +188,20 @@ hermesEnabled=true
 android.nonFinalResIds=false
 EX_DEV_CLIENT_NETWORK_INSPECTOR=true
 expo.useLegacyPackaging=false
-`
+```
 
 8) Confirm that necessary dependencies are present in 'settings.gradle' (project settings):
-`
+```bash
 include ':app'
 includeBuild('../node_modules/@react-native/gradle-plugin')
 apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle");
 applyNativeModulesSettingsGradle(settings)
 apply from: new File(["node", "--print", "require.resolve('expo/package.json')"].execute(null, rootDir).text.trim(), "../scripts/autolinking.gradle")
 useExpoModules()
-`
+```
 
 9) Double check the top-level 'build.gradle' file; it should already contain the following 'buildscript', 'plugins' and 'allprojects' blocks:
-`
+```bash
 buildscript {
     repositories {
         jcenter()
@@ -228,33 +229,33 @@ allprojects {
         maven { url "https://dl.bintray.com/journeyapps/maven" }
     }
 }
-`
+```
 Note: at the bottom of this file should also be a task declaration responsable for correctly cleaning builds:
-`
+```bash
 tasks.register('clean', Delete) {
     delete rootProject.buildDir
 }
-`
+```
 
 10) When the original native project is written in Java, make sure to apply plugin 'kotlin-android' at the top of the app-level build.gradle where at this points; at least two other plugins should already be present:
-`
+```bash
 apply plugin: 'com.android.application'
 apply plugin: "com.facebook.react"
 apply plugin: 'kotlin-android'
 //rest of the code
-`
+```
 Note: at the bottom of the (app-level) 'build.gradle' file should already be the following code, configured from the React Native 'Integration with Existing Apps' guide:
-`
+```bash
 //rest of the code
 apply plugin: 'com.android.application'
 apply plugin: "com.facebook.react"
 apply plugin: 'kotlin-android'
-`
+```
 
 11) Add the following activity declaration in 'AndroidManifest.xml':
-`
+```bash
 <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
-`
+```
 
 These steps were necessary for my OLD, Java Android, project in order to make integrating of Expo Modules into your existing Android project possible; making the development process better since there will be no need for native configuration as long as Expo-compatible packages are used in React Native. Keep in mind that the new entry files for Expo modules integration will be in Kotlin. However, for the native Java project, there's no need to convert syntax since Java and Kotlin can coexist in the same project, albeit not in the same files.
 
