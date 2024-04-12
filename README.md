@@ -150,7 +150,8 @@ override fun invokeDefaultOnBackPressed() {
         }
         return super.onKeyUp(keyCode, event)
     }
-	```
+	
+```
 
 3) Install Expo in the React Native project by running `npm install expo`
 4) Run `npx expo install --fix` to ensure proper installation.
