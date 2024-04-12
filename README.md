@@ -9,7 +9,7 @@ By following my approach the rendering of React Native bundles will only work at
 Advantage: having more control over where React Native bundles are rendered relative to (within) the original native app which is useful to keep using the native (existing) navigation etc.</br>
 Disadvantage: I suppose it's still less "automatic" and might be more difficult to make two seperate React Native bundles communicate</br>
 </br>
-Expo's manual installation approach, I believe, aims to make 'MainActivity' and 'MainApplication' to be the main and only entry file where your react native bundle is rendered in, thus allowing you to have ONE single NATIVE screen in which the React Native bundle is rendered and navigation then be handled, automatically, from React Native Expo-compatible navigation methods.</br>
+Expo's manual installation approach, I believe, aims to make 'MainActivity' and 'MainApplication' to be the main and only entry file's where your React Native bundle is rendered in, thus allowing you to have ONE single NATIVE screen in which the React Native bundle is rendered and navigation then be handled, automatically, from React Native Expo-compatible navigation methods.</br>
 Advantage: communcation between all React Native code is guarenteed (since there's only one bundle being rendered)</br>
 Disadvantage: it's less relevant for a scenario where an older, completely native, android project is required to remain as is and expand that application by, from then on, writing new React Native screens/components and rendering them as bundles in those existing native screens wherever its necessary</br>
 </br>
