@@ -5,7 +5,7 @@ I've put together a guide on integrating React Native Expo into existing Android
 </br>
 Initially, I attempted the automatic installation method using 'npx install-expo-modules@latest', but encountered repeated failures. </br>Then, I turned to the manual installation approach, which provided some insights but didn't fully enable Expo's autolinking feature. </br></br>Through trial and error, I pieced together the necessary steps, essentially following Expo's manual installation guide but a slightly different approach and outcome, especially useful for those unfamiliar with the Android project structure like myself.
 Note that there is still a difference between the Expo's manual installation and my manual installation being the following:</br></br>
-**By following my approach the rendering of React Native bundles will only work at the places where a reactRootView is places and configured to render the correct bundle exported from React Native (AppRegistry).**</br>
+**By following my approach, the rendering of React Native bundles will only work at the places where a reactRootView is places and configured to render the correct bundle exported from React Native (AppRegistry).**</br>
 **Advantage:** having more control over where React Native bundles are rendered relative to (within) the original native app which is useful to keep using the native (existing) navigation etc.</br>
 **Disadvantage:** I suppose it's still less "automatic" and might be more difficult to make two seperate React Native bundles communicate</br>
 </br>
