@@ -260,7 +260,7 @@ apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
 ```
 
-These steps were necessary for my OLD, Java Android, project in order to make integrating of Expo Modules into your existing Android project possible; making the development process better since there will be no need for native configuration as long as Expo-compatible packages are used in React Native.
+These steps were necessary for my OLD, Java Android, project in order to make integrating Expo Modules into your existing Android project possible; making the development process better since there will be no need for native configuration as long as Expo-compatible packages are used in React Native.
 
 ### DISCLAIMER:</br> 
 I have very minimal experience working with Java for mobile android apps and thus I could be wrong about specific "claims" made in my above findings, but I can proudly say that I am now able to write React Native code, keep practicing the expo managed workflow and never have to touch any native code (apart from this one-time configuration and the places I want my React Native bundles to be rendered), to make the React Native components appear in development (hot reload) and render in production builds WITHIN the original, Java/Kotlin-written, native application.
