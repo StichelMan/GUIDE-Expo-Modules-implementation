@@ -38,8 +38,7 @@ IDEs:
 Languages:
   Java: 17.0.10
 npmPackages:
-  react:
-    installed: 18.2.0
+  react: 18.2.0
   react-native: 0.73.6
 Android:
   hermesEnabled: true
