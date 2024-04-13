@@ -59,8 +59,8 @@ https://reactnative.dev/docs/environment-setup (`npx react-native@latest init`)
 Preconditioning Expo Conversion in React Native with Original Native Project:
 1) Ensure consistent package/bundle ID across the entire project, including both the native and React Native Expo configurations in app.json.
 
-2) Begin by creating/modifying 'MainActivity.kt'; The following bits of code are the essential, minimum, required 'MainActivity' modifications:
-Essential imports:
+2) Begin by creating/modifying 'MainActivity.kt'; The following bits of code are the essential, minimum, required 'MainActivity' modifications:</br>
+Essential (and useful) imports:
 ```bash
 import android.content.pm.PackageManager
 import android.os.Bundle
