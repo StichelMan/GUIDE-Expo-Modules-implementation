@@ -30,8 +30,8 @@ Binaries:
   npm: 10.5.0
 SDKs:
   Android SDK Platform:
-  minSdk: 23
-  targetSdkVersion: 34
+	minSdk: 23
+	targetSdkVersion: 34
 IDEs:
   Android Studio: AI-232.10300.40.2321.11668458
   WebStorm: 17.0.10+8-b1207.12
