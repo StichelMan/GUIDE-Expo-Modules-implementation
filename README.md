@@ -233,7 +233,7 @@ allprojects {
     }
 }
 ```
-#### Note: at the bottom of this file should also be a task declaration responsable for correctly cleaning builds:
+Note: at the bottom of this file should also be a task declaration responsable for correctly cleaning builds:
 ```bash
 tasks.register('clean', Delete) {
     delete rootProject.buildDir
@@ -247,12 +247,12 @@ apply plugin: "com.facebook.react"
 apply plugin: 'kotlin-android'
 //rest of the code
 ```
-#### Note: at the bottom of the (app-level) 'build.gradle' file should already be the following code, configured from the React Native 'Integration with Existing Apps' guide:
+Note: at the bottom of the (app-level) 'build.gradle' file should already be the following code, configured from the React Native 'Integration with Existing Apps' guide:
 ```bash
 //rest of the code
-apply plugin: 'com.android.application'
-apply plugin: "com.facebook.react"
-apply plugin: 'kotlin-android'
+apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle");
+applyNativeModulesAppBuildGradle(project)
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 ```
 
 11) Add the following activity declaration in 'AndroidManifest.xml':
